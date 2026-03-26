@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "tarot-db",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "office-taro-visits",
+          "database_id": "91b82772-3ed1-4caf-9b74-d2b2dcb84e38"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "a04b3a70305448ec9a15bdc7fe159c38",
+            "binding": "SECRET",
+            "secret_name": "test"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
